@@ -25,7 +25,7 @@ const Search = ({ value, onChange, children }) =>
 			value={value}
 			onChange={onChange}
 		/>
-	</form>
+</form>
 
 
 const Table = ({ list, pattern, onDismiss }) =>
@@ -54,7 +54,7 @@ const Table = ({ list, pattern, onDismiss }) =>
 				</span>
 			</div>
 		)}
-	</div>
+</div>
 
 
 const Button = ({ onClick, className = '', children }) =>
@@ -63,8 +63,8 @@ const Button = ({ onClick, className = '', children }) =>
 		className={className}
 		type="button"
 	>
-		{children}
-	</button>
+	{children}
+</button>
 
 
 
@@ -122,11 +122,13 @@ class App extends Component {
 						Пошук
                     </Search>
 				</div>
+				{result ? 
 				<Table 
 					list={result.hits}
 					pattern={searchTerm}
 					onDismiss={this.onDismiss}
-				/>
+				/> : 
+				null}
 			</div>
 		);
 	}
